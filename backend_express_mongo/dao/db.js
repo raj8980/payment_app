@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const connectionURL = "mongodb+srv://admin:admin@cluster0.4hytupj.mongodb.net/payment";
+const connectionURL = "";
 
 async function connect(){
     await mongoose.connect(connectionURL);
