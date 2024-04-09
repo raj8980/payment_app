@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 
 const connectionURL = "";
 
-async function connect(){
-    await mongoose.connect(connectionURL);
-}
+mongoose.connect(connectionURL);
+
 
 const Schema = mongoose.Schema;
 
