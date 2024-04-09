@@ -1,10 +1,9 @@
 const mongoose = require("mongoose");
 
-const connectionURL = "";
+const connectionURL = "mongodb+srv://admin:admin@cluster0.4hytupj.mongodb.net/payment";
 
-async function connect(){
-    await mongoose.connect(connectionURL);
-}
+mongoose.connect(connectionURL);
+
 
 const Schema = mongoose.Schema;
 
