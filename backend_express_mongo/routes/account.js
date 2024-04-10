@@ -25,7 +25,7 @@ router.post("/transfer", authMiddleware, async (req, res) => {
     session
   );
 
-  if (account || parseFloat(account.balance) >= parseFloat(req.body.amount)) {
+  if (account && parseFloat(account.balance) >= parseFloat(req.body.amount)) {
     const toAccount = await Account.findOne({ userId: to }).session(session);
 
     if (!toAccount) {
