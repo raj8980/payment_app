@@ -4,7 +4,7 @@ const router = express.Router();
 const jsonwebtoken = require("jsonwebtoken");
 
 const { user, userSignIn, userUpdate, filterParam } = require("../models/User");
-const { User } = require("../db");
+const { User, Account } = require("../db");
 const { JWT_SECRET } = require("../config");
 const { authMiddleware } = require("../middleware");
 
@@ -34,6 +34,13 @@ router.post("/signup", async (req, res) => {
 
       const userId = user._id;
       const userJWT = jsonwebtoken.sign({ userId: userId }, JWT_SECRET);
+
+      let amount = Math.floor(Math.random() * 10000 + 1);
+
+      await Account.create({
+        userId: userId,
+        balance: amount,
+      });
 
       return res.status(200).json({
         message: "User created successfully",
@@ -81,9 +88,7 @@ router.put("/", authMiddleware, async (req, res) => {
     });
   }
 
-  await User.findOneAndUpdate(updatePayload, {
-    _id: updatePayload.userId,
-  });
+  await User.findByIdAndUpdate({ _id: req.userId }, updatePayload);
 
   return res.status(200).json({
     message: "Updated successfully",
