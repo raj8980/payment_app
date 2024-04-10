@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Input } from "../components/Input";
 import axios from "axios";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import { Button } from "../components/Button";
 
 export const SignUp =() =>{
@@ -35,7 +35,7 @@ export const SignUp =() =>{
                     </div>
                     <p className=" mt-10 text-center text-sm text-gray-500">
                         Already have an account?
-                        <a href="/signin" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 px-2">Login</a>
+                        <Link to = "/signin" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500 px-2">Login</Link>
                     </p>
                 </div>
             </div>;
