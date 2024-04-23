@@ -23,7 +23,7 @@ export const SignUp =() =>{
                         <Input onChange={(e)=>{setUserName(e.target.value);}} placeholder="raj@gmail.com" label="Email Address:"/>
                         <Input onChange={(e)=>{setPassword(e.target.value);}} placeholder="Password" label="Password:"/>
                         <Button onClick={async () =>{
-                            const response= await axios.post("http://localhost:3000/api/v1/user/signup",{
+                            const response= await axios.post("http://paymentbe.rajpatel.com.au/api/v1/user/signup",{
                                 userName,
                                 firstName,
                                 lastName,

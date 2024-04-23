@@ -10,7 +10,7 @@ export function Users() {
   useEffect(() => {
     async function fetchData() {
       const result = await axios.get(
-        "http://localhost:3000/api/v1/user/bulk?filter="+filter,
+        "http://paymentbe.rajpatel.com.au/api/v1/user/bulk?filter="+filter,
         {
           headers: {
             Authorization: "Bearer " + localStorage.getItem("token"),
