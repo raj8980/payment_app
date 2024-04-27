@@ -22,7 +22,7 @@ export function TransferMoney(){
                     <div className="mt-2 space-y-6">
                         <Input onChange={(e)=>{setAmount(e.target.value);}} placeholder="5000" label="Amount :"/>
                         <Button onClick={async () =>{
-                            const response= await axios.post("http://paymentbe.rajpatel.com.au/api/v1/account/transfer", 
+                            const response= await axios.post("https://paymentbe.rajpatel.com.au/api/v1/account/transfer", 
                             {
                                 "to" : id,
                                 "amount" : amount

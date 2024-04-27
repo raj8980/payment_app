@@ -14,7 +14,7 @@ export function User({ user }) {
           </p>
         </div>
       </div>
-      <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+      <div className=" sm:flex sm:flex-col sm:items-end">
             <button onClick={(e) =>{
                 navigate("/send?id="+user._id+"&name="+user.firstName)
             }} className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 
